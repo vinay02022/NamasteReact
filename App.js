@@ -35,21 +35,71 @@ const Header = () => {
         </ul>
       </div>
     </div>
-
   );
 };
-function printing(){
-    console.log("Hello It's an Experiment Calling Inside Component....!!")
+function printing() {
+  console.log("Hello It's an Experiment Calling Inside Component....!!");
 }
 //Y h Element
 // const ilaaj=<span>I am Ilaaj Element____!! Check How I got ind=side Dom</span>
+const RestaurentCard = () => {
+  return (
+    <div className="res-card">
+      <img
+        src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt="Loading....."
+      />
+      <div className="card-details">
+        <h3>RotiWala-North Indian</h3>
+        <h3>Biryaani</h3>
+        <h4>$ 21</h4>
+      </div>
+    </div>
+  );
+};
+const Body = () => {
+  return (
+    <div className="body">
+      <div className="search">
+        <input placeholder="Search" />
+      </div>
+      <div className="res-container">
+        <RestaurentCard />
+        <RestaurentCard />
+        <RestaurentCard />
+        <RestaurentCard />
+        <RestaurentCard />
+        <RestaurentCard />
+        <RestaurentCard />
+        <RestaurentCard />
+        <RestaurentCard />
+        <RestaurentCard />
+        <RestaurentCard />
+        <RestaurentCard />
+        <RestaurentCard />
+        <RestaurentCard />
+        <RestaurentCard />
+        <RestaurentCard />
+        <RestaurentCard />
+        <RestaurentCard />
+        <RestaurentCard />
+        <RestaurentCard />
+        <RestaurentCard />
+        <RestaurentCard />
+        <RestaurentCard />
+      </div>
+    </div>
+  );
+};
 
 const AppLayout = () => {
   return (
     <div className="app">
       <Header />
-      {printing()}
-      <h2>{ilaaj}</h2>
+      <Body />
+
+      {/* {printing()} */}
+      {/* <h2>{ilaaj}</h2> */}
 
       {/* //Header */}
       {/* //Body */}
