@@ -105,7 +105,6 @@ const AppLayout = () => {
     <div className="app">
       <Header />
       <Body />
-
       {/* {printing()} */}
       {/* <h2>{ilaaj}</h2> */}
 

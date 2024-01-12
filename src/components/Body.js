@@ -1,15 +1,17 @@
 import React from 'react';
 import { resObj } from '../utils/mockData';
-import { useState } from 'react';
+import { useState ,useEffect} from 'react';
 import RestaurentCard from '../components/RestaurentCard';
 
 const Body = () => {
-  const styling = {
-    backgroundColor: 'black'
-  };
+  const[res,setRes]=useState(resObj)
+  
   const handleFIlter=(()=>{
-    
-    console.log("Clicked_Brooo");
+    let nData=res.filter((restorant)=>{
+      let filteredData=restorant.info.avgRating>4.5
+      return filteredData
+    })
+    setRes(nData)
   })
   return (
     <div className="body">
@@ -17,9 +19,8 @@ const Body = () => {
         <button id='filter-btn'  onClick={handleFIlter}>Add Filter On Products</button>
       </div>
       <div className="res-container">
-        {resObj.map((resto) => (
+        {res.map((resto) => (
             <RestaurentCard resData={resto} key={resto.info.id}/>
-          
         ))}
       </div>
     </div>

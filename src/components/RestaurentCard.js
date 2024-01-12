@@ -29,6 +29,7 @@ const RestaurentCard = (props) => {
         alt={`Image for ${resData.info.name}`}
       />
       <div className="card-details">
+      <h3>{resData.info.avgRating}</h3>
         <h3>{resData.info.name}</h3>
         {/* Additional details like food and price can be added here */}
       </div>
