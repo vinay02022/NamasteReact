@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body"
+// import Data from "./components/Data"
 /**
  * Header
  *  -logo
@@ -105,6 +106,7 @@ const AppLayout = () => {
     <div className="app">
       <Header />
       <Body />
+      {/* <Data/> */}
       {/* {printing()} */}
       {/* <h2>{ilaaj}</h2> */}
 
