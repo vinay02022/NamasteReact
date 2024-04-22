@@ -1,39 +1,35 @@
-import { CDN_URLs } from "../utils/constants";
+import { useState } from "react";
+import { CDN_URLs,REST_LIST } from "../utils/constants";
 
-const RestaurentCard = (props) => {  
-    const { resData } = props;
-    // const { cloudinaryImageId, name } = resData?.data;
-  
-  //   console.log(resData);
-  
-  //   return (
-  //       <div className="res-card" key={id}>
-  //           {console.log("restKAnder------------------------")}
-  
-  //           <img
-  //               src={`https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/${cloudinaryImageId}`}
-  //               alt="Loading....."
-  //           />
-  //           <div className="card-details">
-  //               <h3>{name}</h3>
-  //               {/* <h3>{food}</h3>
-  //               <h4>${price}</h4> */}
-  //           </div>
-  //       </div>
-  //   );
-  // };
-  return (
-    <div className="res-card">
-      <img
-        src={CDN_URLs+resData.info.cloudinaryImageId}
-        alt={`Image for ${resData.info.name}`}
-      />
-      <div className="card-details">
-      <h3>{resData.info.avgRating}</h3>
-        <h3>{resData.info.name}</h3>
-        {/* Additional details like food and price can be added here */}
+const RestaurentCard = (props) => { 
+  // console.log("props",props);
+
+    const { cloudinaryImageId,name,avgRating } = props?.resData?.info;
+    
+    return (
+      <div className="w-64 h-54 bg-slate-400 p-4 m-4 rounded-md flex flex-col hover:bg-stone-100 ">
+        <img className="rounded-md object-cover h-52 w-54"
+        
+          src={CDN_URLs + cloudinaryImageId}
+          alt={`Image for ${name}`}
+        />
+        <div className="flex-grow flex flex-col justify-center">
+          <h3 className="font-bold font-sans pt-4">{name}</h3>
+          <h3>{avgRating}</h3>
+          {/* Additional details like food and price can be added here */}
+        </div>
       </div>
-    </div>
-  );
+    );
   }
+  export const WithPromotedLabel = (WrappedComponent) => {
+    return (props) => {
+      return (
+        <div>
+          <label className="absolute bg-black m-1 p-1 text-white rounded-lg w-20 h-8">Promoted</label>
+          <WrappedComponent {...props} />
+        </div>
+      );
+    };
+  };
+  
   export default RestaurentCard
