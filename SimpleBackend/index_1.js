@@ -20,6 +20,7 @@ app.get('/users', (req, res) => {
 });
 
 // GET user by ID
+
 app.get('/users/:id', (req, res) => {
     const userId = parseInt(req.params.id);
     const user = users.find(user => user.id === userId);

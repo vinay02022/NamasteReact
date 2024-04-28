@@ -4,10 +4,15 @@ import Header from "./components/Header";
 import Body from "./components/Body"
 import {RouterProvider, createBrowserRouter,Outlet} from "react-router-dom"
 import About from "./components/About";
+import Cart from "./components/Cart";
 import Contact from "./components/Contact";
 import Error from "./components/Error";
 import Career from "./components/Career";
 import RestaurentMenu from "./components/RestaurentMenu";
+// Works as a Bridge
+import { Provider } from "react-redux";
+// Store yha laaya 
+import appStore from "./utils/appStore";
 
 
 
@@ -113,11 +118,12 @@ import RestaurentMenu from "./components/RestaurentMenu";
 const AppLayout = () => {
   
   return (
-    <div className="app">
+   <Provider store={appStore}>
+     <div className="app">
       <Header />
       <Outlet />
-      
     </div>
+   </Provider>
   );
 };
 const appRouters=createBrowserRouter([
@@ -141,14 +147,21 @@ const appRouters=createBrowserRouter([
     element:<Contact/>
   },
   {
+    path:"/cart",
+    element:<Cart />
+  },
+  {
     path:"/career",
     element:<Career/>
   },
+  
 {
   path:"/restaurants/:resid",
   element:<RestaurentMenu/>
 
-}     ]
+},
+ 
+    ]
 }
 ])
 

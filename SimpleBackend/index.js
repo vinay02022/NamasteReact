@@ -5,11 +5,9 @@
 // Import required modules
 const express = require('express');
 const mongoose = require('mongoose');
-
 // Create Express app
 const app = express();
 const PORT = 3000;
-
 // Connect to MongoDB
 mongoose.connect('mongodb://localhost:27017/my_database', {
     useNewUrlParser: true,
@@ -27,10 +25,8 @@ const UserSchema = new mongoose.Schema({
 
 // Create User model
 const User = mongoose.model('User', UserSchema);
-
 // Middleware to parse JSON bodies
 app.use(express.json());
-
 // Routes
 
 // Create a new user

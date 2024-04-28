@@ -23,7 +23,7 @@ const RestaurentCategorey = (props) => {
     <div>
     { showData && items.map((item) => {
     // {console.log("items",item.card.info)}
-    return <ShowItems data={item.card.info} key={item.card.info.id} />;
+    return <ShowItems data={item.card.info} key={item.card.info.id} itemList={item}/>;
 })}
 
     </div>

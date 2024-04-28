@@ -46,10 +46,10 @@ const MenuCard = (props) => {
           Will Apply
         </h3>
       </div>
-      <div className="w-9/12  mx-auto border-2 border-solid border-green-500 flex  items-center justify-between">
+      {/* <div className="w-9/12  mx-auto border-2 border-solid border-green-500 flex  items-center justify-between">
         <h1 className="font-bold m-2 p-2">{title}</h1>
         <span className="pt-4 text-xl">⬇️</span>
-      </div>
+      </div> */}
       <div className="text-center m-2 p-4 border-2 border-solid border-s-red-50">
       {categoreyList.map((categorey,idx) => (
         //y line yaad rhe
@@ -57,10 +57,7 @@ const MenuCard = (props) => {
           setShowIdx={(()=>{
             setShowIdx(idx);
           })}
-
           />
-
-          
         ))}
       </div>
       
